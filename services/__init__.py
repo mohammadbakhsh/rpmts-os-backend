@@ -1,18 +1,5 @@
-from . import auth
-from . import clients
-from . import projects
-from . import invoices
-from . import leads
-from . import proposals
-from . import campaigns
-from . import targets
-from . import sales_kits
-from . import briefs
-from . import productions
-from . import publishing
-from . import reviews
-from . import seo
-from . import network
-from . import competitors
-from . import dashboard
-from . import ai
+# services/__init__.py
+from .supabase import SupabaseService
+from .ai_service import AIService
+
+__all__ = ['SupabaseService', 'AIService']
