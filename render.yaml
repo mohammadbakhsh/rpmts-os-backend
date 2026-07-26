@@ -1,0 +1,38 @@
+services:
+  - type: web
+    name: rpm-os-backend
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    pythonVersion: 3.13.0
+    envVars:
+      - key: SUPABASE_URL
+        sync: true
+      - key: SUPABASE_KEY
+        sync: true
+      - key: SUPABASE_SERVICE_KEY
+        sync: true
+      - key: DEEPSEEK_API_KEY
+        sync: true
+      - key: DEEPSEEK_ENDPOINT
+        value: https://api.deepseek.com/v1/chat/completions
+      - key: DEEPSEEK_MODEL
+        value: deepseek-chat
+      - key: OPENAI_API_KEY
+        sync: true
+      - key: OPENAI_MODEL
+        value: gpt-4
+      - key: GROQ_API_KEY
+        sync: true
+      - key: GROQ_ENDPOINT
+        value: https://api.groq.com/openai/v1/chat/completions
+      - key: GROQ_MODEL
+        value: mixtral-8x7b-32768
+      - key: SECRET_KEY
+        generateValue: true
+      - key: CORS_ORIGINS
+        value: "*"
+      - key: FLASK_ENV
+        value: production
+      - key: DEBUG
+        value: "false"
