@@ -1,3 +1,4 @@
+# routes/__init__.py
 from . import auth
 from . import clients
 from . import projects
